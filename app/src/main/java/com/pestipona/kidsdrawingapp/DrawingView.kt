@@ -18,6 +18,22 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
     private var mBrushSize: Float = 0.toFloat()
     private var color = Color.BLACK
     private var canvas: Canvas? = null
+
+    init {
+        setUpDrawing()
+    }
+
+    private fun setUpDrawing() {
+        mDrawPaint = Paint()
+        mDrawPath = CustomPath(color, mBrushSize)
+        mDrawPaint!!.color = color
+        mDrawPaint!!.style = Paint.Style.STROKE
+        mDrawPaint!!.strokeJoin = Paint.Join.ROUND
+        mDrawPaint!!.strokeCap = Paint.Cap.ROUND
+        mCanvasPaint = Paint(Paint.DITHER_FLAG)
+        mBrushSize = 20.toFloat()
+    }
+
     internal inner class CustomPath(var color: Int, var brushThickness: Float): Path(){
 
     }
