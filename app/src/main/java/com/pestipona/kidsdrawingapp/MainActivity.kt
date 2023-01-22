@@ -3,6 +3,7 @@ package com.pestipona.kidsdrawingapp
 import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
@@ -31,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun showBrushSizeDialog() {
+    private fun showBrushSizeDialog(){
         val brushDialog: Dialog = Dialog(this)
         brushDialog.setContentView(R.layout.dialog_brush_size)
         brushDialog.setTitle("Brush size: ")
@@ -54,5 +55,24 @@ class MainActivity : AppCompatActivity() {
 
         brushDialog.show()
     }
+
+    fun paintClicked(view: View){
+        if (view != mImageButtonCurrentPaint){
+            val imageButton = view as ImageButton
+            val colorTag = imageButton.tag.toString()
+            drawingView?.setColor(colorTag)
+
+            imageButton.setImageDrawable(
+                ContextCompat.getDrawable(this, R.drawable.pallet_pressed)
+            )
+
+            mImageButtonCurrentPaint?.setImageDrawable(
+                ContextCompat.getDrawable(this, R.drawable.pallet_normal)
+            )
+
+            mImageButtonCurrentPaint = view
+        }
+    }
+
 
 }
