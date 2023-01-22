@@ -1,5 +1,7 @@
 # Android Kids Drawing App
 
+![](ScreenShots/IDE.png)
+
 ## Classes Used:
 
 * [android.content.Context](https://developer.android.com/reference/android/content/Context)
