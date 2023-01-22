@@ -158,6 +158,16 @@
             android:onClick="paintClicked"
             />
 
+        <ImageButton
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_margin="2dp"
+            android:src="@drawable/pallet_normal"
+            android:tag="@color/white"
+            android:background="@color/white"
+            android:onClick="paintClicked"
+            />
+
     </LinearLayout>
 
     <ImageButton
